@@ -1,0 +1,38 @@
+#!/usr/bin/env php
+<?php
+
+error_reporting(E_ERROR | E_PARSE);
+
+if (php_sapi_name() != 'cli') {
+    echo "[*] Run only in CLI mode";
+    exit;
+}
+
+use Lib\App;
+
+require_once __DIR__ . '/autoload.php';
+
+$app = new App();
+
+if (in_array($argv[2], ['--help', '-h'])) {
+    $app->message("\e[32m", "usage: ./arpia <host-url> [optional: --ports|-p <file-ports.txt>]");
+    return;
+}
+
+if (in_array($argv[2], ['--ports', '-p'])) {
+    $filePorts = fopen($argv[3], 'r');
+    $filePorts = fread($filePorts, filesize($argv[3]));
+    $ports = explode(PHP_EOL, $filePorts);
+} else {
+    $ports = [21, 25, 80, 81, 110, 143, 443, 587, 2525, 3306];
+}
+
+$app->scanner($argv[1], $ports);
+
+foreach ($app->getScanner()->openPorts() as $port => $service) {
+    $app->message("\e[32m", "[*] Port: {$port} with service: {$service} is open!");
+}
+
+foreach ($app->getScanner()->closePorts() as $port => $service) {
+    $app->message("\e[31m", "[*] Port: {$port} is closed!");
+}
