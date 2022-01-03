@@ -12,7 +12,7 @@ Harpia **MUST** be use **ONLY** for **EDUCATIONAL** purposes!! I'm not responsab
 - [Usage](#Usage)
 
 ### Dependencies
-* PHP 7.4+ (Only)
+* PHP 7.4
 
 ### Usage
 
