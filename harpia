@@ -14,12 +14,11 @@ require_once __DIR__ . '/autoload.php';
 
 $app = new App();
 
-if (in_array($argv[2], ['--help', '-h'])) {
-    $app->message("\e[32m", "usage: ./arpia <host-url> [optional: --ports|-p <file-ports.txt>]");
-    return;
+if (isset($argv[1]) && in_array($argv[1], ['--help', '-h'])) {
+    return $app->printer()->success("usage: ./harpia <host-url> [optional: --ports|-p <file-ports.txt>]");
 }
 
-if (in_array($argv[2], ['--ports', '-p'])) {
+if (isset($argv[2]) && in_array($argv[2], ['--ports', '-p'])) {
     $filePorts = fopen($argv[3], 'r');
     $filePorts = fread($filePorts, filesize($argv[3]));
     $ports = explode(PHP_EOL, $filePorts);
@@ -27,12 +26,17 @@ if (in_array($argv[2], ['--ports', '-p'])) {
     $ports = [21, 25, 80, 81, 110, 143, 443, 587, 2525, 3306];
 }
 
-$app->scanner($argv[1], $ports);
+if (isset($argv[1])) {
 
-foreach ($app->getScanner()->openPorts() as $port => $service) {
-    $app->message("\e[32m", "[*] Port: {$port} with service: {$service} is open!");
-}
+    $app->scanner($argv[1], $ports);
 
-foreach ($app->getScanner()->closePorts() as $port => $service) {
-    $app->message("\e[31m", "[*] Port: {$port} is closed!");
+    foreach ($app->getScanner()->openPorts() as $port => $service) {
+        $app->printer()
+            ->success("*] Port: {$port} with service: {$service} is open!");
+    }
+
+    foreach ($app->getScanner()->closePorts() as $port => $service) {
+        $app->printer()
+            ->error("[*] Port: {$port} is closed!");
+    }
 }
