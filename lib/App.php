@@ -28,7 +28,7 @@ class App
      *
      * @return Printer
      */
-    private function getPrinter(): Printer
+    public function printer(): Printer
     {
         return $this->printer;
     }
@@ -52,18 +52,5 @@ class App
     public function getScanner(): ScannerCommand
     {
         return $this->scanner;
-    }
-
-    /**
-     * Print messages of success or error in display
-     * with custom colors
-     *
-     * @param string $color
-     * @param string $message
-     * @return void
-     */
-    public function message(string $color, string $message): void
-    {
-        $this->getPrinter()->display($color . $message);
     }
 }
