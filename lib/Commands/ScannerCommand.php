@@ -52,7 +52,7 @@ class ScannerCommand
                 : $this->closePorts[$port] = getservbyport($port, 'tcp');
         }
 
-        fclose($this->url);
+        // fclose($connection);
     }
 
     /** 
