@@ -7,6 +7,7 @@ namespace Lib\Utils;
  * 
  * @package Lib\Utils
  * @author  Thiago <thiagom.devsec@gmail.com>
+ * @version 1.0
  */
 class Colors
 {

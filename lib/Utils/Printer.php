@@ -8,6 +8,7 @@ use Lib\Utils\Colors;
  * Package to print messages on display
  * 
  * @package Lib\Utils
+ * @version 1.0
  */
 class Printer extends Colors
 {
