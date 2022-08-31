@@ -2,12 +2,11 @@
 
 namespace Lib\Commands;
 
-use Exception;
-
 /**
  * Scan ports on the url
  *
  * @package Lib\Commands
+ * @version 1.0
  */
 class ScannerCommand
 {
@@ -51,8 +50,6 @@ class ScannerCommand
                 ? $this->openPorts[$port]  = getservbyport($port, 'tcp')
                 : $this->closePorts[$port] = getservbyport($port, 'tcp');
         }
-
-        // fclose($connection);
     }
 
     /** 
