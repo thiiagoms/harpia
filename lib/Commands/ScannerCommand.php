@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lib\Commands;
 
 /**
@@ -45,7 +47,7 @@ class ScannerCommand
         foreach ($this->ports as $port) {
 
             $connection = fsockopen($this->url, $port, $error, $errstr, 2);
-            
+
             is_resource($connection)
                 ? $this->openPorts[$port]  = getservbyport($port, 'tcp')
                 : $this->closePorts[$port] = getservbyport($port, 'tcp');

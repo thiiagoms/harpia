@@ -1,0 +1,27 @@
+{
+    "name": "thiiagoms/harpia",
+    "authors": [
+        {
+            "name": "Thiago Silva",
+            "email": "thiagom.devsec@gmail.com",
+            "homepage": "https://thiiagoms.github.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "require-dev": {
+        "nunomaduro/phpinsights": "^2.6",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "scripts": {
+        
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

@@ -239,3 +239,7 @@ modules.xml
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,jetbrains,jetbrains+all,jetbrains+iml
+
+
+### Composer ###
+/vendor/

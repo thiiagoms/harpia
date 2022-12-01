@@ -36,10 +36,11 @@ class App
     /**
      * Scan ports on host and check if is open or closed
      * 
-     * @param string host url
-     * @param arraym ports to scan
+     * @param string $url   - host url
+     * @param array  $ports - ports to scan
+     * @return void
      */
-    public function scanner(string $url, array $ports)
+    public function scanner(string $url, array $ports): void
     {
         $this->scanner = new ScannerCommand($url, $ports);
     }
