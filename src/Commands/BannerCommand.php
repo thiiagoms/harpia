@@ -8,14 +8,13 @@ use Src\Tools\Printer;
 
 /**
  * Banner Command
- * 
+ *
  * @package Src\Commands
  * @author  Thiago Silva <thiagom.devsec@gmail.com>
  * @version 1.0
  */
 class BannerCommand
 {
-
     /**
      * Initial banner
      *
@@ -23,7 +22,8 @@ class BannerCommand
      */
     public static function init(): void
     {
-        Printer::error("
+        Printer::error(
+            '
             ██░ ██  ▄▄▄       ██▀███   ██▓███   ██▓ ▄▄▄      
             ▓██░██▒▒████▄    ▓██ ▒ ██▒▓██░  ██▒ ▓██▒████▄    
             ██▀▀██░▒██  ▀█▄  ▓██ ░▄█ ▒▓██░ ██▓▒▒██▒▒██  ▀█▄  
@@ -37,7 +37,8 @@ class BannerCommand
             [*] Harpia - Port Scan made with Love and Elephants
             [*] Author: Thiago Silva AKA thiiagoms
             [*] Version: 1.0
-        ");
+        '
+        );
     }
 
     /**
@@ -47,7 +48,8 @@ class BannerCommand
      */
     public static function help(): void
     {
-        Printer::warning("
+        Printer::warning(
+            '
             How to use ?!
 
             $ ./harpia
@@ -56,6 +58,12 @@ class BannerCommand
 
             $ ./harpia <address>
             $ ./harpia google.com
-        ");
+
+            or 
+
+            $ ./harpia -p <path-to-ports.txt>
+            $ ./harpia -p ports_example.txt
+        '
+        );
     }
 }
