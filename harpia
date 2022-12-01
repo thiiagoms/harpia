@@ -8,17 +8,27 @@ if (php_sapi_name() !== 'cli') {
     exit;
 }
 
-use Src\Commands\BannerCommand;
+use Src\Commands\{BannerCommand, ScannerCommand};
+use Src\Helpers\PortReader;
+use Src\Tools\Printer;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+BannerCommand::init();
 
 if (isset($argv[1]) and in_array($argv[1], ['--help', '-h'])) {
     BannerCommand::help();
     exit;
 }
 
-BannerCommand::init();
+if (isset($argv[1]) and in_array($argv[1], ['-p'])) {
+    $ports = PortReader::reader($argv[2]);
+}
 
+$address = isset($argv[1]) && $argv[1] !== '-p' ? $argv[1] : (string)  readline("> Website address: ");
 
-$addres = (string) readline("[*] Website address: ");
+$app = new ScannerCommand($address, $ports);
+
+Printer::success("[*] Start port scanner on {$address}");
+
+$app->scanner($address);
