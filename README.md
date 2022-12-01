@@ -5,29 +5,84 @@
      <h3 align="center">Harpia - See all ports are open or closed on host! :hearts:</h3>
 </p>
 
-Harpia is an educational tool to scan hosts and catch ports are open or closed!<br>
-Harpia **MUST** be use **ONLY** for **EDUCATIONAL** purposes!! I'm not responsability for what do you do with this tool.
+Simple port scan made with elephants :elephants:
 
 - [Dependencies](#Dependencies)
 - [Usage](#Usage)
 
 ### Dependencies
-* PHP 7.4
+* PHP 8.1+
+* Composer or Docker
 
-### Usage
 
-- Harpia is very easy to use: 
+### Install Dependencies
+
+- With Composer:
+
 ```bash
-$ ./harpia <host-url> [optional: --ports <ports-file>]
+$ git clone https//github.com/thiiagoms/harpia
+$ cd harpia
+harpia $ composer installl
+harpia $ chmod +x harpia
 ```
-* Example with default ports: 
+### Usage :hammer:
+
+### You can use `harpia` in twio ways:: 
+
+* First: Answer the hostname and scan with default ports
 ```bash
-$ ./harpia google.com
+$ ./harpia
+
+██░ ██  ▄▄▄       ██▀███   ██▓███   ██▓ ▄▄▄      
+▓██░██▒▒████▄    ▓██ ▒ ██▒▓██░  ██▒ ▓██▒████▄    
+██▀▀██░▒██  ▀█▄  ▓██ ░▄█ ▒▓██░ ██▓▒▒██▒▒██  ▀█▄  
+▓█ ░██ ░██▄▄▄▄██ ▒██▀▀█▄  ▒██▄█▓▒ ▒░██░░██▄▄▄▄██ 
+▓█▒░██▓ ▓█   ▓██▒░██▓ ▒██▒▒██▒ ░  ░░██░ ▓█   ▓██▒
+▒ ░░▒░▒ ▒▒   ▓▒█░░ ▒▓ ░▒▓░▒▓▒░ ░  ░░▓   ▒▒   ▓▒█░
+▒ ░▒░ ░  ▒   ▒▒ ░  ░▒ ░ ▒░░▒ ░      ▒ ░  ▒   ▒▒ ░
+░  ░░ ░  ░   ▒     ░░   ░ ░░        ▒ ░  ░   ▒   
+░  ░  ░      ░  ░   ░               ░        ░  ░
+
+[*] Harpia - Port Scan made with Love and Elephants
+[*] Author: Thiago Silva AKA thiiagoms
+[*] Version: 1.0
+
+> Website address: 
 ```
 
-* With custom ports file
+* Second: With custom ports in your `file.txt` or another file that you choosed
+```bash
+$ ./harpia -p <path-to-your-file.txt>
+
+██░ ██  ▄▄▄       ██▀███   ██▓███   ██▓ ▄▄▄      
+▓██░██▒▒████▄    ▓██ ▒ ██▒▓██░  ██▒ ▓██▒████▄    
+██▀▀██░▒██  ▀█▄  ▓██ ░▄█ ▒▓██░ ██▓▒▒██▒▒██  ▀█▄  
+▓█ ░██ ░██▄▄▄▄██ ▒██▀▀█▄  ▒██▄█▓▒ ▒░██░░██▄▄▄▄██ 
+▓█▒░██▓ ▓█   ▓██▒░██▓ ▒██▒▒██▒ ░  ░░██░ ▓█   ▓██▒
+▒ ░░▒░▒ ▒▒   ▓▒█░░ ▒▓ ░▒▓░▒▓▒░ ░  ░░▓   ▒▒   ▓▒█░
+▒ ░▒░ ░  ▒   ▒▒ ░  ░▒ ░ ▒░░▒ ░      ▒ ░  ▒   ▒▒ ░
+░  ░░ ░  ░   ▒     ░░   ░ ░░        ▒ ░  ░   ▒   
+░  ░  ░      ░  ░   ░               ░        ░  ░
+
+[*] Harpia - Port Scan made with Love and Elephants
+[*] Author: Thiago Silva AKA thiiagoms
+[*] Version: 1.0
+
+> Website address: 
 ```
-$ ./harpia google.com --ports ports.txt
+
+## Run lints and tests:
+
+Lint: 
+
+```bash
+harpia $ composer phpcs src
+harpia $ ./vendor/bin/phpinsights
+```
+
+Tests:
+```bash
+harpia $ composer phpunit
 ```
 
 If you want to contribute, you can also open issue or clone this repository to make a Pull Request, thank you so much for choose Harpia :hearts:
