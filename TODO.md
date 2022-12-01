@@ -1,1 +1,0 @@
-# Refatorar toda a aplicacao, passando os pacotes para src/, adicionando testes e adicionando lint

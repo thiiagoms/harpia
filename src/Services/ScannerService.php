@@ -58,9 +58,8 @@ class ScannerService
     private function scanner(string $url, array $ports): void
     {
         foreach ($ports as $port) {
-
             $port = (int) $port;
-            
+
             $portService = $this->portService($port);
 
             try {
