@@ -5,7 +5,7 @@
      <h3 align="center">Harpia - See all ports are open or closed on host! :hearts:</h3>
 </p>
 
-Simple port scan made with elephants :elephants:
+Simple port scan made with elephants 🐘:
 
 - [Dependencies](#Dependencies)
 - [Usage](#Usage)
