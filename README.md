@@ -20,10 +20,10 @@ Simple port scan made with elephants :elephants:
 - With Composer:
 
 ```bash
-$ git clone https//github.com/thiiagoms/harpia
+$ git clone https://github.com/thiiagoms/harpia
 $ cd harpia
-harpia $ composer installl
-harpia $ chmod +x harpia
+$ composer installl
+$ chmod +x harpia
 ```
 ### Usage :hammer:
 
@@ -76,13 +76,13 @@ $ ./harpia -p <path-to-your-file.txt>
 Lint: 
 
 ```bash
-harpia $ composer phpcs src
-harpia $ ./vendor/bin/phpinsights
+$ composer phpcs src
+$ ./vendor/bin/phpinsights
 ```
 
 Tests:
 ```bash
-harpia $ composer phpunit
+$ composer phpunit
 ```
 
 If you want to contribute, you can also open issue or clone this repository to make a Pull Request, thank you so much for choose Harpia :hearts:
