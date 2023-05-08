@@ -20,7 +20,7 @@ Simple port scan made with elephants :elephants:
 - With Composer:
 
 ```bash
-$ git clone https//github.com/thiiagoms/harpia
+$ git clone https://github.com/thiiagoms/harpia
 $ cd harpia
 harpia $ composer installl
 harpia $ chmod +x harpia
